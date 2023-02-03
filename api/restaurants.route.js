@@ -3,7 +3,7 @@ import express from "express"
 // a controller file is what the route uses
 // what this file basically does is where we control the options of what the user can do
 import RestaurantsController from "./restaurants.controller.js"
-
+import ReviewsController from "./reviews.controller.js"
 
 
 const router = express.Router()
@@ -27,4 +27,5 @@ router
 .put(ReviewCtrl.apiUpdateReview)
 // delete review all together
 .delete(ReviewsCtrl.apiDeleteReview)
+// create and import all methods.
 export default router
