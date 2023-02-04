@@ -22,10 +22,10 @@ router
 // e.x. /api/v1/restaurants/review
 .route("/review")
 // create a review
-.post(Reviews.Ctrl.apiPostReview)
+.post(ReviewsController.apiPostReview)
 // edit review
-.put(ReviewCtrl.apiUpdateReview)
+.put(ReviewsController.apiUpdateReview)
 // delete review all together
-.delete(ReviewsCtrl.apiDeleteReview)
+.delete(ReviewsController.apiDeleteReview)
 // create and import all methods.
 export default router
