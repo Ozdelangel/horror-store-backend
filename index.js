@@ -2,6 +2,7 @@ import app from "./server.js"
 import mongodb from "mongodb"
 import dotenv from "dotenv"
 import RestaurantsDAO from "./dao/restaurantsDAO.js"
+import ReviewsDAO from "./dao/reviewsDAO.js"
 
 // configure .env
 dotenv.config()
@@ -32,6 +33,7 @@ MongoClient.connect(
 .then(async client => {
     // this is where we are going to give the references to the other files
     await RestaurantsDAO.injectDB(client)
+    await ReviewsDAO.injectDB(client)
     app.listen(port, () => {
         console.log(`listening on port ${port}`)
     })
