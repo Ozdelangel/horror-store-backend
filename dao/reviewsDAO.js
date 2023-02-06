@@ -20,11 +20,12 @@ export default class ReviewsDAO {
 
     static async addReview(restaurantId, user, review, date) {
         try {
-            const reviewDoc ={
-                name: user._id,
+            const reviewDoc = {
+                name: user.name,
+                user_id: user._id,
                 date: date,
                 text: review,
-                restaurant_id: ObjectId(restaurantId)
+                restaurant_id: ObjectId(restaurantId),
          
             }
             return await reviews.insertOne(reviewDoc)
@@ -38,7 +39,7 @@ export default class ReviewsDAO {
     static async updateReview ( reviewId, userId, text, date){
         try{
             const updateResponse = await reviews.updateOne(
-                {user_id: userId, _id:ObjectId(reviewId)},
+                {user_id: userId, _id: ObjectId(reviewId)},
                 {$set: {text: text, date: date}},
             )
 

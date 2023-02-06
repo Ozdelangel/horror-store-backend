@@ -62,6 +62,8 @@ export default class ReviewsController {
                 )
             }
 
+            res.json({status: "success"})
+
         } catch (e){
             // if it is not a success we send a status of 500 and the message.
             res.status(500).json({error: e.message})
