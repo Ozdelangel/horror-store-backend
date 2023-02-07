@@ -18,7 +18,7 @@ router.route("/").get(RestaurantsController.apiGetRestaurants)
 router.route("/id:id").get(RestaurantsController.apiGetRestaurantById)
 // this will return a list of all cuisines
 // on the front end we want to make a drop down of all cuisines
-router.route("/cuisines").get(RestaurantsController.apiGetRestaurantsByCuisines)
+router.route("/cuisines").get(RestaurantsController.apiGetRestaurantCuisines)
 
 
 // here is where we are going to give them access to be able to do all CRUD actions
