@@ -15,7 +15,7 @@ const router = express.Router()
 router.route("/").get(RestaurantsController.apiGetRestaurants)
 // returns a list of restaurants by ID
 // and all reviews
-router.route("/id:id").get(RestaurantsController.apiGetRestaurantById)
+router.route("/id/:id").get(RestaurantsController.apiGetRestaurantById)
 // this will return a list of all cuisines
 // on the front end we want to make a drop down of all cuisines
 router.route("/cuisines").get(RestaurantsController.apiGetRestaurantCuisines)

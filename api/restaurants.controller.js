@@ -52,7 +52,7 @@ export default class RestaurantsController{
             // a parameter is something that is actually in the URL after the slash
             // body is something that is after the request
             let id = req.params.id || {}
-            let restaurant = await RestaurantsDAO.apiGetRestaurantById(id)
+            let restaurant = await RestaurantsDAO.getRestaurantById(id)
             if(!restaurant){
                 res.status(404).json({ error: "Not Found"})
                 return
